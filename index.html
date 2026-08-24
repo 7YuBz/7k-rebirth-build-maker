@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>7K-RE:BIRTH Build Maker v0.6.0</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <div class="brand-row"><div class="app-brand" id="appBrand"><span>7K-RE:BIRTH</span> Build Maker</div><div class="patch-badge" id="patchBadge">แพทช์ 20/08/2026 (โดยอง)</div></div>
+    <section class="panel hero-panel">
+      <div class="section-kicker">CHARACTER</div>
+      <div class="hero-head">
+        <div class="portrait" id="portrait">F</div>
+        <div class="hero-controls">
+          <div class="field wide"><label>ตัวละคร</label><select id="character"></select></div>
+          <div class="badges">
+            <span id="roleBadge">สาย: ATTACK</span>
+            <span id="typeBadge">ประเภทโจมตี: ATTACK</span>
+            <span id="gradeBadge">ระดับ: LEGEND</span>
+          </div>
+        </div>
+        <div class="progress-grid">
+          <div class="field"><label>Transcend <span class="label-th">(ข้ามขีดจำกัด)</span></label><select id="transcend"></select></div>
+          <div class="field"><label>Potential ATK <span class="label-th">(ศักยภาพ พลังโจมตี)</span></label><select id="potAtk"></select></div>
+          <div class="field"><label>Potential DEF <span class="label-th">(ศักยภาพ พลังป้องกัน)</span></label><select id="potDef"></select></div>
+          <div class="field"><label>Potential HP <span class="label-th">(ศักยภาพ พลังชีวิต)</span></label><select id="potHp"></select></div>
+        </div>
+        <div class="base-grid">
+          <div><small>Base ATK</small><b id="baseAtk">-</b></div>
+          <div><small>Base DEF</small><b id="baseDef">-</b></div>
+          <div><small>Base HP</small><b id="baseHp">-</b></div>
+          <div><small>Base SPD</small><b id="baseSpd">-</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel stats-panel">
+      <div class="section-title">
+        <div><div class="section-kicker">TARGET BUILDER</div><h2>ค่าสถานะรวม + Target</h2></div>
+        <div class="field difficulty-field"><label>ความยากของ Roll</label><select id="difficulty"><option value="3">ระดับ 1 · สูงสุด 3 Roll</option><option value="4" selected>ระดับ 2 · สูงสุด 4 Roll</option><option value="5">ระดับ 3 · สูงสุด 5 Roll</option></select></div>
+      </div>
+      <div class="target-help"><b>วิธีใช้:</b> กรอกเฉพาะ Target ที่ต้องการ แล้วเลือก Priority (1 = สำคัญที่สุด) ช่องที่ไม่ต้องการปล่อยว่างได้</div>
+      <div id="statsGrid" class="stats-grid"></div>
+    </section>
+
+    <section class="panel simulator-panel">
+      <div class="section-title"><div><div class="section-kicker">MANUAL BUILD</div><h2>Build Simulator</h2></div><div class="actions"><button id="resetBtn">รีเซ็ต</button><button id="exportBtn" class="primary">📸 ถ่ายภาพ Build ที่จัดไว้</button></div></div>
+      <div id="simulatorCapture" class="capture-surface">
+        <div class="capture-title"><b>Build Simulator</b><span>เลือก Set / Main / Sub Option เอง — Stat อัปเดตแบบ Real-time</span></div>
+        <div id="simLiveStats" class="sim-live-stats"></div>
+        <div id="equipmentGrid" class="equipment-grid"></div>
+      </div>
+    </section>
+
+    <section class="panel recommendation-panel">
+      <div class="section-title"><div><div class="section-kicker">ROLL OPTIMIZER</div><h2>แผนตีบวกที่แนะนำ</h2><div class="section-subtext">อ้างอิง Set / Main / Sub Option ที่เลือกอยู่ใน Build Simulator ด้านบน แล้วหา Roll ที่เหมาะกับ Target ให้ 3 แบบ</div></div><button id="recommendBtn" class="primary">วิเคราะห์</button></div>
+      <div id="recommendations" class="recommendations empty">กำหนด Target ด้านบน จัดของใน Build Simulator แล้วกด “วิเคราะห์”</div>
+    </section>
+  </main>
+  <canvas id="exportCanvas" width="1080" height="1350" hidden></canvas>
+  <script src="data/site_config.js"></script>
+  <script src="data/stats.js"></script>
+  <script src="data/equipment_sets.js"></script>
+  <script src="data/equipment_options.js"></script>
+  <script src="data/progression_rules.js"></script>
+  <script src="data/characters.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="app.js"></script>
+</body>
+</html>
