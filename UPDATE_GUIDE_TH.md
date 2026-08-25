@@ -132,3 +132,20 @@ Icon อยู่ใน `assets/stats/`
 | แก้ชื่อ/หน่วย/ไอคอน Stat | `data/stats.js` + `assets/stats/` |
 | แก้ Potential/Transcend | `data/progression_rules.js` |
 | แก้รูปอุปกรณ์ | `assets/equipment/` |
+
+
+## การแสดงรายชื่อตัวละคร
+ตั้งแต่ v0.6.2 หน้า Character Selector จะแสดงเฉพาะตัวละครที่มี:
+
+```js
+grade: "LEGEND"
+```
+
+ข้อมูล `RARE` และระดับอื่นยังคงอยู่ใน `data/characters.js`
+แต่จะไม่ถูกแสดงใน Dropdown
+
+หากต้องการให้ตัวละครใหม่แสดงในเว็บ ให้ตรวจว่า record ของตัวละครนั้นมี:
+
+```js
+grade: "LEGEND"
+```

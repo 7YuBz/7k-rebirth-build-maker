@@ -1,4 +1,4 @@
-# 7K-RE:BIRTH Build Maker v0.6.0
+# 7K-RE:BIRTH Build Maker v0.6.2
 
 เวอร์ชันนี้ปรับเป็นโครงสร้าง Data-driven เพื่อให้อัปเดตตัวละคร, รูป, Options, Set และกฎ Progression ได้ง่ายขึ้น
 
@@ -21,3 +21,8 @@
 ## GitHub Pages
 
 เวอร์ชัน 0.6.1 เตรียมสำหรับ GitHub Pages แล้ว ดูขั้นตอนที่ `GITHUB_PAGES_GUIDE_TH.md`
+
+
+## v0.6.2
+- หน้าเลือกตัวละครจะแสดงเฉพาะตัวละครระดับ `LEGEND`
+- ข้อมูลตัวละครระดับอื่นยังคงเก็บไว้ใน `data/characters.js` เพื่อใช้ในอนาคต
